@@ -1,38 +1,60 @@
-.App {
+
+/* .App-header {
+  display: column;
+  align-items: center;
+  justify-content: center;
+} */
+
+.header-title {
   text-align: center;
+  font-family: "Oswald", Helvetica, sans-serif;
+  font-size: 80px;
+  transform: skewY(-10deg);
+  letter-spacing: 4px;
+  word-spacing: -8px;
+  color: tomato;
+  text-shadow: -1px -1px 0 firebrick, -2px -2px 0 firebrick,
+    -3px -3px 0 firebrick, -4px -4px 0 firebrick, -5px -5px 0 firebrick,
+    -6px -6px 0 firebrick, -7px -7px 0 firebrick, -8px -8px 0 firebrick,
+    -30px 20px 40px dimgrey;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.new-form-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #c46565;
+  color: #eed8d8;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  width: 400px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.forms-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-item {
+  display: flex;
+  align-items: center;
+}
+
+.form-name {
+  cursor: pointer;
+}
+
+.create-new-form-icon {
+  cursor: pointer;
+  padding-left: 6px;
 }

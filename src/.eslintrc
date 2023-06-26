@@ -1,0 +1,10 @@
+{
+    "extends": ["react-app"],
+    "rules": {
+      // Custom rules can be added here
+    },
+    "globals": {
+      "library": "readonly"
+    }
+  }
+  
