@@ -1,0 +1,119 @@
+.form-popup {
+  overflow: auto;
+  position: inherit;
+  top: 100%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  z-index: 9999;
+}
+
+.form-toolbar {
+  background-color: #333;
+  padding: 1px;
+  cursor: move;
+  display: flex;
+  max-height: fit-content;
+  
+  font-weight: 900;
+  vertical-align: middle;
+  box-sizing: inherit;
+  border: none;
+  white-space: nowrap;
+}
+
+.form-toolbar button.close-button {
+  color: white;
+  background-color: #333;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-toolbar-header {
+  color: white;
+}
+
+.form-content {
+  padding: 20px;
+}
+
+.mandatory-indicator {
+  color: rgb(255, 255, 255);
+  margin-left: 5px;
+}
+
+.field-title {
+  font-weight: 200;
+}
+
+.form-container {
+  font-size: 17px;
+  text-decoration: none;
+  text-align: left;
+  font-family: Source Sans Pro, sans-serif;
+  border-radius: 5px;
+  background-color: #ff080031;
+  padding: 10px;
+  text-size-adjust: 30px;
+  text-emphasis: initial;
+  display: grid;
+  grid-gap: 10px;
+
+}
+
+.form-fields-container {
+  flex-grow: 1;
+  font-size: 17px;
+  text-decoration: none;
+  text-align: left;
+  font-family: Source Sans Pro, sans-serif;
+  padding: 5px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  background-color: #ff08006c;
+
+}
+
+.field-container {
+  display: grid;
+  grid-gap: 10px;
+  background-color: #ff080088;;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.form-invalid-message {
+  font-size: 17px;
+  text-decoration: none;
+  text-align: left;
+  font-family: Source Sans Pro, sans-serif;
+  color: red;
+}
+
+.submit-button {
+  font-size: 17px;
+  text-decoration: none;
+  text-align: center;
+  font-family: Source Sans Pro, sans-serif;
+  
+  background-color: red;
+  font-weight: 900;
+  margin-bottom: 16px !important;
+  padding: 15px 18px;
+  vertical-align: middle;
+  box-sizing: inherit;
+  color: white;
+  border-radius: 5px;
+  line-height: 1.5px;
+  border: none;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+  white-space: nowrap;
+}
