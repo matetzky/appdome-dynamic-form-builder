@@ -11,18 +11,17 @@ const Form = ({ form, updateCurrentFormFields, handleClose }) => {
   const [showNewField, setShowNewField] = useState(false);
   const [formIsValid, setFormIsValid] = useState(true);
 
-  ///////////////////////////////////////////////////////////
 
   function checkMandatoryFields(fields) {
+    console.log('boom', fields)
     for (let i = 0; i < fields?.length; i++) {
       const field = fields[i];
-      if (field.isMandatory && field.value === "") {
+      if (field.isMandatory && (field.value === "")) {
         return false;
       };
     }
     return true;
   }
-  ///////////////////////////////////////////////////////////
   const validateForm = () => {
     {
       /* First Validation -> No empty Mandotry Fields */
@@ -32,7 +31,6 @@ const Form = ({ form, updateCurrentFormFields, handleClose }) => {
       /* More Validation Should be added here... */
     }
   };
-  ///////////////////////////////////////////////////////////
   const handleSubmit = () => {
     
     if (validateForm) {
@@ -44,14 +42,13 @@ const Form = ({ form, updateCurrentFormFields, handleClose }) => {
     }
   };
 
-  ///////////////////////////////////////////////////////////
+  
   const handleAddField = (fieldData) => {
     setFields([...fields, fieldData]);
   };
-  ///////////////////////////////////////////////////////////
   const handleDeleteField = (index) =>
     setFields(fields?.filter((_, i) => i !== index));
-  ///////////////////////////////////////////////////////////
+  
   const renderFields = () => {
     const filterNonEmptyFields = fields?.filter((field) => field.length !== 0);
     return filterNonEmptyFields?.map((field, index) => {
@@ -125,20 +122,21 @@ const Form = ({ form, updateCurrentFormFields, handleClose }) => {
                 {field.name}
                 <span className="mandatory-indicator">*</span>
               </span>
-              {field.options.map((option, index) => (
+              {field.options.map((option, index) => {
+                return(
                 <div key={index}>
                   <label>
                     <input
                       type="checkbox"
                       checked={option.isMandatory}
-                      onChange={(e) => {
-                        field.value = e.target.value;
+                      onChange={() => {
+                        field.value = [...field.value, option];
                       }}
                     />
-                    {option.name}
+                    {option}
                   </label>
                 </div>
-              ))}
+              )})}
             </div>
           );
           break;
