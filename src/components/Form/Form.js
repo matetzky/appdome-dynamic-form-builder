@@ -13,7 +13,6 @@ const Form = ({ form, updateCurrentFormFields, handleClose }) => {
 
 
   function checkMandatoryFields(fields) {
-    console.log('boom', fields)
     for (let i = 0; i < fields?.length; i++) {
       const field = fields[i];
       if (field.isMandatory && (field.value === "")) {
