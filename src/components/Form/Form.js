@@ -115,6 +115,9 @@ const Form = ({ form, updateCurrentFormFields, handleClose }) => {
             /* Checkbox */
           }
         case "checkbox":
+          if (field.value === ""){
+            field.value = [];
+          } 
           fieldElement = (
             <div className="form-container">
               <span className="field-title">
@@ -127,9 +130,20 @@ const Form = ({ form, updateCurrentFormFields, handleClose }) => {
                   <label>
                     <input
                       type="checkbox"
-                      checked={option.isMandatory}
-                      onChange={() => {
-                        field.value = [...field.value, option];
+                      onChange={(e) => {
+                        const { checked } = e.target;
+                        console.log('lihi\n', option, 'is checked (=', checked, ')')
+                        if (checked) {
+                          if (!field.value.includes(option)){
+                            field.value.push(option);
+                          }
+                        }
+                        else {
+                          const index = field.value.indexOf(option);
+                          if (index !== -1) {
+                            field.value.splice(index, 1);
+                          }
+                        }
                       }}
                     />
                     {option}
